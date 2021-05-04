@@ -4,6 +4,7 @@
 function loadArticle(container, path)
 {
 	container.innerHTML = '';
+	console.log(path);
 	require(['text'], (data => {
 		require([path], function(x, html) {
 			console.log(html);
