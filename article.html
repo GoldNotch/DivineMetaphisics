@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="index.css">
+	<script type="text/javascript" src="requirejs.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<title>Размышления о законах мира</title>
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+			<a>Лого</a>
+		</div>
+		<nav class="header-nav">
+			<a href="content.html">Содержание</a>
+			<a href="index.html">О нас</a>
+		</nav>
+	</header>
+
+	<main>
+		<content id="article-content"></content>
+	</main>
+
+</body>
+<script type="text/javascript">
+	//get article path via url arg
+	const params = new URLSearchParams(location.search);
+	const path = params.get("path");
+	loadArticle(document.getElementById("article-content"), "text!" + path + "!strip");
+</script>
+
+</html>
