@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="requirejs.js"></script>
 	<script type="text/javascript" src="content.js"></script>
 	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="color_scheme.js"></script>
 	<title>Размышления о законах мира</title>
 </head>
 
@@ -19,6 +20,16 @@
 			<a href="content.html">Содержание</a>
 			<a href="index.html">О нас</a>
 		</nav>
+		<!-- Color Scheme picker -->
+			<div class='dropdown-menu'>
+				<button class="dropdown-btn" id="color-picker-btn"></button>
+				<div class="dropdown-content" id='color-picker-menu'>
+					<button class="dropdown-btn" id="set_red_btn" onclick="setColorScheme('red')"></button>
+					<button class="dropdown-btn" id="set_green_btn" onclick="setColorScheme('green')"></button>
+					<button class="dropdown-btn" id="set_blue_btn" onclick="setColorScheme('blue')"></button>
+					<button class="dropdown-btn" id="set_yellow_btn" onclick="setColorScheme('yellow')"></button>
+				</div>
+			</div>
 	</header>
 
 	<main>
@@ -27,6 +38,7 @@
 
 </body>
 <script type="text/javascript">
+	initColorPickerMenu();
 	//get article path via url arg
 	const params = new URLSearchParams(location.search);
 	const path = params.get("path");
