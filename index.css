@@ -9,8 +9,8 @@
 html{
 	height: 100%;
 	width: 100%;
-	font-family: Comic Sans MS, Comic Sans, cursive;
 	font-size: 28px;
+	font-family: 'Roboto', sans-serif;
 	color:var(--text-color)
 }
 
@@ -36,6 +36,8 @@ header {
 	padding-right: var(--side-margin);
 	padding-top: var(--header-padding);
 	padding-bottom: var(--header-padding);
+
+	font-family: cursive;
 }
 
 .header-nav {
