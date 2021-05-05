@@ -1,55 +1,59 @@
-
-
 //Получить статью
 function loadArticle(container, path)
 {
 	container.innerHTML = '';
-	console.log(path);
-	require(['text'], (data => {
-		require([path], function(html) {
-			container.innerHTML = html;
-		});
-	}));
+	require(['text'], (data) => {
+		require([path], (html) => container.innerHTML = html,
+						(err) => require(['text!no_article.html!strip'], (html) => container.innerHTML = html)
+				);
+	});
 }
 
 //получить содержание в html формате
 //returns html dom element with website content
 function loadContent(container)
 {
-	require(['content'], (data) => {
-		const list = document.createElement('ol');
-		const stack = [[content, list]];
+	const list = document.createElement('ol');
+	const stack = [[content, list]];
 
-		//without recursion!
-		while (stack.length > 0)
-		{
-			const head = stack.pop();
-			const section = head[0];
-			const ol = head[1];
+	//without recursion!
+	while (stack.length > 0)
+	{
+		const head = stack.pop();
+		const section = head[0];
+		const ol = head[1];
 
-			Object.keys(section).forEach(title => {
-				const value = section[title];
-				const li = document.createElement('li');
-				//if it is a article
-				if (typeof value === "string" || value instanceof String)
-				{
-					const a = document.createElement('a');
-					a.innerText = title;
-					a.setAttribute('href', "article.html?path=" + value);
-					li.appendChild(a);
-				}
-				//if it is a section
-				else
-				{
-					li.innerText = title;
-					const list = document.createElement('ol');
-					stack.push([value, list]);
-					li.appendChild(list);
-				}
-				ol.appendChild(li);
-			});
-		}
+		Object.keys(section).forEach(title => {
+			const value = section[title];
+			const li = document.createElement('li');
+			//if it is a article
+			if (typeof value === "string" || value instanceof String)
+			{
+				const a = document.createElement('a');
+				a.innerText = title;
+				a.setAttribute('href', "article.html?path=" + value);
+				li.appendChild(a);
+			}
+			//if it is a section
+			else
+			{
+				li.innerText = title;
+				const list = document.createElement('ol');
+				stack.push([value, list]);
+				li.appendChild(list);
+			}
+			ol.appendChild(li);
+		});
+	}
 
-		container.appendChild(list);
-	});
+	container.appendChild(list);
+}
+
+function saveColorScheme(color)
+{
+	localStorage.setItem("color", color);
+}
+
+function loadColorScheme() {
+	const color = localStorage.getItem('color');
 }
