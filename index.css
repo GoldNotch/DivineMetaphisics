@@ -1,10 +1,7 @@
-/* 
-Желтая тема: #ffe16b, #fff5cc;
-Синяя тема: #66b5ff, #dbeeff;
-*/
 :root {
 	--text-color:#444444;
 	--border-style: solid var(--text-color) 3px; /* main border's style*/
+	--color-picker-border-style: solid var(--text-color) 2px;
 	--side-margin: 5rem;				/* margin from left and right side of screen */
 	--header-padding: 1rem;			/* padding from top and bottom side of screen*/
 }
@@ -40,14 +37,57 @@ header {
 	padding-top: var(--header-padding);
 	padding-bottom: var(--header-padding);
 
-	background-color: #ffe16b/*, #66b5ff*/;
+	background-color: #66ff82/*, #66b5ff*/;
 }
 
-nav.header-nav {
-	width: 10rem;
+.header-nav {
+	width: 12rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
+}
+
+.dropdown-menu {
+	position: relative;
+}
+
+.dropdown-btn {
+	display: block;
+	border: var(--border-style);
+	border-radius: 50%;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	/* center align */
+	left: 50%;
+  	right: auto;
+  	text-align: center;
+  	transform: translate(-50%, 0);
+
+  	border: var(--color-picker-border-style);
+  	border-radius: 1rem;
+}
+
+.dropdown-content button
+{
+	margin: 0.15rem;
+	border: var(--color-picker-border-style);
+}
+
+.dropdown-content button:hover
+{
+	border: var(--border-style);
+}
+
+.dropdown-btn:hover + .dropdown-content,.dropdown-content:hover {
+	display: flex;
+	flex-direction: column;
 }
 
 /* ------------------ main section style --------------------- */
@@ -59,7 +99,7 @@ main {
 	justify-content: center;
 
 	
-	background-color: #fff5cc/*, #dbeeff*/;
+	background-color: #e5ffea/*, #dbeeff*/;
 }
 
 content

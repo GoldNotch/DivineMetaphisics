@@ -48,12 +48,3 @@ function loadContent(container)
 
 	container.appendChild(list);
 }
-
-function saveColorScheme(color)
-{
-	localStorage.setItem("color", color);
-}
-
-function loadColorScheme() {
-	const color = localStorage.getItem('color');
-}

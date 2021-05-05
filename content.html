@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="index.css">
 	<script type="text/javascript" src="content.js"></script>
 	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="color_scheme.js"></script>
 	<title>Размышления о законах мира</title>
 </head>
 
@@ -17,7 +18,18 @@
 		<nav class="header-nav">
 			<a href="content.html">Содержание</a>
 			<a href="index.html">О нас</a>
+			<!-- Color Scheme picker -->
+			<div class='dropdown-menu'>
+				<button class="dropdown-btn" id="color-picker-btn"></button>
+				<div class="dropdown-content" id='color-picker-menu'>
+					<button class="dropdown-btn" id="set_red_btn" onclick="setColorScheme('red')"></button>
+					<button class="dropdown-btn" id="set_green_btn" onclick="setColorScheme('green')"></button>
+					<button class="dropdown-btn" id="set_blue_btn" onclick="setColorScheme('blue')"></button>
+					<button class="dropdown-btn" id="set_yellow_btn" onclick="setColorScheme('yellow')"></button>
+				</div>
+			</div>
 		</nav>
+		
 	</header>
 
 	<main>
@@ -25,6 +37,7 @@
 	</main>
 </body>
 <script type="text/javascript">
+	initColorPickerMenu();
 	loadContent(document.getElementById('website-content'));
 </script>
 	
