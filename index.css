@@ -36,8 +36,6 @@ header {
 	padding-right: var(--side-margin);
 	padding-top: var(--header-padding);
 	padding-bottom: var(--header-padding);
-
-	background-color: #66ff82/*, #66b5ff*/;
 }
 
 .header-nav {
@@ -97,9 +95,6 @@ main {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-
-	
-	background-color: #e5ffea/*, #dbeeff*/;
 }
 
 content
