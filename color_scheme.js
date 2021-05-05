@@ -15,7 +15,8 @@ function initColorPickerMenu()
 	document.getElementById("set_blue_btn").style.backgroundColor = blue_scheme[0];
 	document.getElementById("set_yellow_btn").style.backgroundColor = yellow_scheme[0];
 	const scheme_name = localStorage.getItem('scheme');
-	selected_scheme = schemes[scheme_name];
+	if (scheme_name)
+		selected_scheme = schemes[scheme_name];
 	updateColors();
 }
 
