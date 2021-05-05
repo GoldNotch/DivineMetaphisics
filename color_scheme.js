@@ -1,7 +1,7 @@
-const blue_scheme = ['#66b5ff', '#dbeeff'];
-const red_scheme = ['#F8AFA6', '#F9F1F0'];
-const green_scheme = ['#66ff82', '#e5ffea'];
-const yellow_scheme = ['#ffe16b', '#fff5cc'];
+const blue_scheme = ['#A0E7E5', '#ebfaf9'];
+const red_scheme = ['#ffb3bf', '#ffe5ea'];
+const green_scheme = ['#B4F8C8', '#e8fdee'];
+const yellow_scheme = ['#fadeb3', '#fdf5e7'];
 const schemes = {"red": red_scheme,
 					"blue": blue_scheme,
 					"green": green_scheme,
